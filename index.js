@@ -38,19 +38,22 @@ hbs.registerPartials(path.join(__dirname, 'views/partials'));
 // conexion con partes de la pagina
 app.get('/', (req, res, next)=>{
     res.render('index', {
-        style:'index.css'   
+        style: 'index.css'
+        
     })
 })
 app.get('/Nosotros', (req, res) =>{
     res.render('Nosotros', {
         titulo: 'Sobre Nosotros',
-        style:'index.css'
+        style: 'index.css'
+      
     })
 });
 app.get('/Chef', (req, res) =>{
     res.render('Chef', {
         titulo: 'Chef',
-        style:'index.css'
+       style: 'index.css'
+        
     })
 });
 
@@ -63,13 +66,14 @@ app.get('/Contacto', (req, res) =>{
 app.get('/Menu', (req, res) =>{
     res.render('Menu', {
         titulo: 'Menu',
-        style:'index.css'
+        style: 'index.css'
+        
     })
 });
 
 app.post('/Contacto', (req, res) =>{
     const {Nombre, Apellido, Correo, Telefono, Mensaje}= req.body;
-    console.log(Nombre, Apellido, Correo, Telefono, Mensaje);
+    //console.log(Nombre, Apellido, Correo, Telefono, Mensaje);
 
     let datos = {
         Nombre: Nombre,
@@ -83,14 +87,14 @@ app.post('/Contacto', (req, res) =>{
     
     res.render('Index',{
         titulo: 'Contacto',
-        style:'index.css'
+        
     });
     });       
 });
 
 
 app.listen(PORT, () => {
-    console.log(`El servidor está trabajando en el Puerto ${PORT}`);
+    //console.log(`El servidor está trabajando en el Puerto ${PORT}`);
 });
 
 
