@@ -11,18 +11,17 @@ const PORT = process.env.PORT || 8080;
 
 
 
-/*const conexion = mysql.createConnection 
-    database: process.env.DATABASE,
-});*/
+const conexion = mysql.createConnection 
+    database: process.env.DATABASE;
 
 //Conexión a DataBase
-conexion.connect((err) => {
+/*conexion.connect((err) => {
     if(err){
     console.error(`Error en la conexion: ${err.stack}`);
     return;
 }
-    //console.log(`Conectado a base de datos ${process.env.DATABASE}`);
-})
+    console.log(`Conectado a base de datos ${process.env.DATABASE}`);
+})*/
 
 //Middelwares
 app.use(express.json());
@@ -94,7 +93,7 @@ app.post('/Contacto', (req, res) =>{
 
 
 app.listen(PORT, () => {
-    //console.log(`El servidor está trabajando en el Puerto ${PORT}`);
+    console.log(`El servidor está trabajando en el Puerto ${PORT}`);
 });
 
 
